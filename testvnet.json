@@ -1,0 +1,69 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "uaenorth",
+      "allowedValues": [
+        "uaenorth",
+        "uaecentral",
+        "uaesouth"
+      ],
+      "metadata": {
+        "description": "Location for all resources."
+      }
+    },
+    "virtualNetworkName": {
+      "type": "string",
+      "defaultValue": "TestVnet",
+      "metadata": {
+        "description": "Name of the virtual network."
+      }
+    },
+    "addressPrefix": {
+      "type": "string",
+      "defaultValue": "10.10.0.0/16",
+      "metadata": {
+        "description": "Address prefix for the virtual network."
+      }
+    },
+    "subnetName": {
+      "type": "string",
+      "defaultValue": "TestVmSubnet",
+      "metadata": {
+        "description": "Name of the subnet."
+      }
+    },
+    "subnetPrefix": {
+      "type": "string",
+      "defaultValue": "10.10.0.0/24",
+      "metadata": {
+        "description": "Address prefix for the subnet."
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2023-02-01",
+      "name": "[parameters('virtualNetworkName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "[parameters('addressPrefix')]"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "[parameters('subnetName')]",
+            "properties": {
+              "addressPrefix": "[parameters('subnetPrefix')]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
