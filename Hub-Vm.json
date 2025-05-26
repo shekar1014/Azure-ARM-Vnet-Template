@@ -4,7 +4,7 @@
     "parameters": {
         "vmName": {
             "type": "string",
-            "defaultValue": "testvm"
+            "defaultValue": "Hub-Vm"
         },
         "adminUsername": {
             "type": "string"
@@ -14,11 +14,11 @@
         },
         "virtualNetworkName": {
             "type": "string",
-            "defaultValue": "TestVnet"
+            "defaultValue": "Hub-VNet"
         },
         "subnetName": {
             "type": "string",
-            "defaultValue": "TestVmSubnet"
+            "defaultValue": "Hub-Vm-Subnet"
         }
     },
     "variables": {
