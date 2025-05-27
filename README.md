@@ -1,8 +1,14 @@
-VNet peering from my-arm-vnet to test-vnet was established successfully.
+VNet peering from Hub-VM to Spoke-Vm was established successfully.
 
-![image](https://github.com/user-attachments/assets/907a1c94-afa3-4a24-9ea3-bfb7a043710a)
+Hub-Vm
 
-![image](https://github.com/user-attachments/assets/f36d2767-52f5-4f1c-b006-dfa813911308)
+![image](https://github.com/user-attachments/assets/6f0f34fd-9722-4283-a13b-783b3bffa671)
+
+
+Spoke-Vm
+
+![image](https://github.com/user-attachments/assets/045b46f9-a9e9-4584-82a9-2cf14f1fdc86)
+
 
 
 
