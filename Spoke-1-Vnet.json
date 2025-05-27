@@ -4,7 +4,7 @@
   "parameters": {
     "vnetName": {
       "type": "string",
-      "defaultValue": "Spoke1-Vnet",
+      "defaultValue": "Spoke-Vnet",
       "metadata": {
         "description": "Name of the Virtual Network"
       }
@@ -42,7 +42,7 @@
     "nsgWebName": "[concat(parameters('vnetName'), '-web-nsg')]",
     "subnets": [
       {
-        "name": "WebSubnet",
+        "name": "Vm-Subnet",
         "addressPrefix": "10.20.1.0/24",
         "nsgName": "[variables('nsgWebName')]",
         "serviceEndpoints": [
@@ -78,7 +78,7 @@
               "protocol": "Tcp",
               "sourcePortRange": "*",
               "destinationPortRange": "3389",
-              "sourceAddressPrefix": "10.0.4.0/24",
+              "sourceAddressPrefix": "*",
               "destinationAddressPrefix": "*",
               "access": "Allow",
               "priority": 130,
@@ -152,7 +152,7 @@
     },
     "webSubnetId": {
       "type": "string",
-      "value": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), 'WebSubnet')]"
+      "value": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), 'Vm-Subnet')]"
     },
     "appSubnetId": {
       "type": "string",
