@@ -1,0 +1,31 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "uatVnetName": {
+            "type": "String"
+        },
+        "sqeVnetResourceGroup": {
+            "type": "String"
+        },
+        "sqeVnetName": {
+            "type": "String"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+            "apiVersion": "2022-05-01",
+            "name": "[concat(parameters('uatVnetName'), '/uat-to-sqe-peering')]",
+            "properties": {
+                "remoteVirtualNetwork": {
+                    "id": "[resourceId(parameters('sqeVnetResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('sqeVnetName'))]"
+                },
+                "allowVirtualNetworkAccess": true,
+                "allowForwardedTraffic": true,
+                "allowGatewayTransit": false,
+                "useRemoteGateways": false
+            }
+        }
+    ]
+}
