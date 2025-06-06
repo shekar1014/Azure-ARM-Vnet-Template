@@ -1,0 +1,248 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": {
+                "type": "String",
+                "value": "uaenorth"
+            }
+        },
+        "networkInterfaceName1": {
+            "value": {
+                "type": "String",
+                "value": "uat-vm418_z1"
+            }
+        },
+        "enableAcceleratedNetworking": {
+            "value": {
+                "type": "Bool",
+                "value": true
+            }
+        },
+        "networkSecurityGroupName": {
+            "value": {
+                "type": "String",
+                "value": "uat-vm-nsg"
+            }
+        },
+        "networkSecurityGroupRules": {
+            "value": {
+                "type": "Array",
+                "value": [
+                    {
+                        "name": "RDP",
+                        "properties": {
+                            "priority": 300,
+                            "protocol": "TCP",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourceAddressPrefix": "*",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*",
+                            "destinationPortRange": "3389"
+                        }
+                    }
+                ]
+            }
+        },
+        "subnetName": {
+            "value": {
+                "type": "String",
+                "value": "uat-vm-subnet"
+            }
+        },
+        "virtualNetworkName": {
+            "value": {
+                "type": "String",
+                "value": "uat-vm-vnet"
+            }
+        },
+        "addressPrefixes": {
+            "value": {
+                "type": "Array",
+                "value": [
+                    "172.16.0.0/16"
+                ]
+            }
+        },
+        "subnets": {
+            "value": {
+                "type": "Array",
+                "value": [
+                    {
+                        "name": "uat-vm-subnet",
+                        "properties": {
+                            "addressPrefix": "172.16.0.0/24"
+                        }
+                    }
+                ]
+            }
+        },
+        "publicIpAddressName1": {
+            "value": {
+                "type": "String",
+                "value": "uat-vm-ip"
+            }
+        },
+        "publicIpAddressType": {
+            "value": {
+                "type": "String",
+                "value": "Static"
+            }
+        },
+        "publicIpAddressSku": {
+            "value": {
+                "type": "String",
+                "value": "Standard"
+            }
+        },
+        "pipDeleteOption": {
+            "value": {
+                "type": "String",
+                "value": "Delete"
+            }
+        },
+        "virtualMachineName": {
+            "value": {
+                "type": "String",
+                "value": "uat-vm"
+            }
+        },
+        "virtualMachineName1": {
+            "value": {
+                "type": "String",
+                "value": "uat-vm"
+            }
+        },
+        "virtualMachineComputerName1": {
+            "value": {
+                "type": "String",
+                "value": "uat-vm"
+            }
+        },
+        "virtualMachineRG": {
+            "value": {
+                "type": "String",
+                "value": "uat-rg"
+            }
+        },
+        "osDiskType": {
+            "value": {
+                "type": "String",
+                "value": "StandardSSD_LRS"
+            }
+        },
+        "osDiskDeleteOption": {
+            "value": {
+                "type": "String",
+                "value": "Delete"
+            }
+        },
+        "virtualMachineSize": {
+            "value": {
+                "type": "String",
+                "value": "Standard_E2s_v3"
+            }
+        },
+        "nicDeleteOption": {
+            "value": {
+                "type": "String",
+                "value": "Delete"
+            }
+        },
+        "hibernationEnabled": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "adminUsername": {
+            "value": {
+                "type": "String",
+                "value": "uat-user"
+            }
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "patchMode": {
+            "value": {
+                "type": "String",
+                "value": "AutomaticByOS"
+            }
+        },
+        "enablePeriodicAssessment": {
+            "value": {
+                "type": "String",
+                "value": "ImageDefault"
+            }
+        },
+        "enableHotpatching": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "securityType": {
+            "value": {
+                "type": "String",
+                "value": "TrustedLaunch"
+            }
+        },
+        "secureBoot": {
+            "value": {
+                "type": "Bool",
+                "value": true
+            }
+        },
+        "vTPM": {
+            "value": {
+                "type": "Bool",
+                "value": true
+            }
+        },
+        "virtualMachine1Zone": {
+            "value": {
+                "type": "String",
+                "value": "1"
+            }
+        },
+        "autoShutdownStatus": {
+            "value": {
+                "type": "String",
+                "value": "Enabled"
+            }
+        },
+        "autoShutdownTime": {
+            "value": {
+                "type": "String",
+                "value": "19:00"
+            }
+        },
+        "autoShutdownTimeZone": {
+            "value": {
+                "type": "String",
+                "value": "UTC"
+            }
+        },
+        "autoShutdownNotificationStatus": {
+            "value": {
+                "type": "String",
+                "value": "Enabled"
+            }
+        },
+        "autoShutdownNotificationLocale": {
+            "value": {
+                "type": "String",
+                "value": "en"
+            }
+        },
+        "autoShutdownNotificationEmail": {
+            "value": {
+                "type": "String",
+                "value": "Shekar.Kadinolla@mazikglobal.com"
+            }
+        }
+    }
+}
